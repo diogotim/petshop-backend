@@ -4,9 +4,11 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "yarn clean && tsc -p tsconfig.json && yarn copy",
     "start": "node ./build/src/index.js",
     "test": "jest --coverage",
+    "copy": "cp -r ./public ./build",
+    "clean": "rm -rf ./build",
     "lint": "yarn eslint .",
     "lint:fix": "yarn eslint . --fix",
     "format": "prettier --write '**/*.{ts,js}'"

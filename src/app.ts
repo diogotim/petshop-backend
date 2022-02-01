@@ -4,12 +4,11 @@ import helmet from "fastify-helmet";
 import products from "./routes/v1/products/products";
 import product from "./routes/v1/product/product";
 import bestSellers from "./routes/v1/best-sellers/best-sellers";
-import fastifyStatic from "fastify-static";
 
 const build = (): FastifyInstance => {
   const app = fastify();
   app.register(helmet);
-  app.register(fastifyStatic, {
+  app.register(require('fastify-static'), {
     root: path.join(__dirname, "../public"),
   });
   app.register(products, { prefix: "/v1" });
