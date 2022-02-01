@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "amd": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [ "@typescript-eslint", "prettier"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "func-names": "off",
+      "no-process-exit": "off",
+      "object-shorthand": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"]
+    },
+    "ignorePatterns": ["**coverage**/**/*", "**/build/**/*"],
+    "overrides": [
+        {
+          "files": ["**/__tests__/**/*.ts", "**/src/**/*.ts"]
+        }
+    ]
+}
